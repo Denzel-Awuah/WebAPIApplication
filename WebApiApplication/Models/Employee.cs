@@ -1,0 +1,19 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApiApplication.Models
+{
+    public class Employee
+    {
+        public int Id { get; set; }
+
+        public required string Name { get; set; }
+
+        public required string Email { get; set; }
+
+        public required string Phone { get; set; }
+
+        public decimal Salary { get; set; }
+
+
+    }
+}
