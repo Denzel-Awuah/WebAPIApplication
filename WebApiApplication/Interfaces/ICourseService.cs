@@ -10,6 +10,5 @@ namespace WebApiApplication.Interfaces
         public Course GetCourseById(int id);
         public Course GetCourseByIdInstructor(int id);
         public Course UpdateCourse(Course course);
-
     }
 }
