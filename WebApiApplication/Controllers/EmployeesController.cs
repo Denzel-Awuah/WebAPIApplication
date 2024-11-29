@@ -8,8 +8,8 @@ using WebApiApplication.Models.DTOs;
 
 namespace WebApiApplication.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class EmployeesController : ControllerBase
     {
         private IEmployeeService _employeeService;

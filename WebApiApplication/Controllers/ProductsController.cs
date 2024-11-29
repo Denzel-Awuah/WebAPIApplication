@@ -7,8 +7,8 @@ using WebApiApplication.Models.DTOs;
 
 namespace WebApiApplication.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
         private IProductService _productService;
@@ -17,6 +17,7 @@ namespace WebApiApplication.Controllers
         {
             _productService = productService;
         }
+
 
         [HttpGet]
         public IActionResult Get()
