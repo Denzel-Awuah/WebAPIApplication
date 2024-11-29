@@ -65,8 +65,6 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-
-
 // Add Services
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IProductService, ProductService>();
