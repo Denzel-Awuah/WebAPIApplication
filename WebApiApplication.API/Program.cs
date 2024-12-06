@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 using WebApiApplication.Data;
 using WebApiApplication.Interfaces;
 using WebApiApplication.Service;
+using WebApiApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -12,6 +12,7 @@ namespace WebApiApplication.Controllers
     [Route("api/[controller]")]
     public class EmployeesController : ControllerBase
     {
+        //Services
         private IEmployeeService _employeeService;
 
         public EmployeesController(IEmployeeService employeeService)
@@ -19,12 +20,14 @@ namespace WebApiApplication.Controllers
             _employeeService = employeeService;
         }
 
+        //GET: api/Employees
         [HttpGet]
         public IActionResult GetAllEmployees()
         {
             return Ok(_employeeService.GetAllEmployees());
         }
 
+        //GET: api/Employees/{id}
         [HttpGet]
         [Route("{id:int}")]
         public IActionResult GetEmployeeById([FromRoute] int id)
@@ -39,6 +42,7 @@ namespace WebApiApplication.Controllers
             return Ok(employee);
         }
 
+        //POST: api/Employees
         [HttpPost]  
         public IActionResult AddNewEmployee([FromBody] AddEmployeeDto addEmployeeDto) 
         {
@@ -56,6 +60,7 @@ namespace WebApiApplication.Controllers
             
         }
 
+        
         [HttpPost("collection")]
         public IActionResult AddNewEmployees([FromBody] List<Employee> employeesCollection)
         {
@@ -66,6 +71,7 @@ namespace WebApiApplication.Controllers
 
         }
 
+        //PUT: api/Employees/{id}
         [HttpPut]
         [Route("{id:int}")]
         public IActionResult UpdateEmployee([FromRoute] int id,[FromBody] UpdateEmployeeDto updateEmployeeDto) 
@@ -87,6 +93,7 @@ namespace WebApiApplication.Controllers
             return Ok(employee);
         }
 
+        //DELETE: api/Employee/{id}
         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult DeleteEmployee()

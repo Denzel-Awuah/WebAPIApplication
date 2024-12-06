@@ -11,6 +11,7 @@ namespace WebApiApplication.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
+        //Services
         private IProductService _productService;
 
         public ProductsController(IProductService productService)
@@ -18,13 +19,14 @@ namespace WebApiApplication.Controllers
             _productService = productService;
         }
 
-
+        //GET: api/Products
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetProducts()
         {
             return Ok(_productService.GetAllProducts());
         }
 
+        //GET: api/Products/{id}
         [HttpGet("{id:int}")]
         public IActionResult GetById([FromRoute] int id)
         {
@@ -38,6 +40,7 @@ namespace WebApiApplication.Controllers
             return Ok(product);
         }
 
+        //POST: api/Products
         [HttpPost]
         public IActionResult AddNewProduct([FromBody] AddProductDto productDto)
         {
@@ -52,6 +55,7 @@ namespace WebApiApplication.Controllers
             return Ok(newProduct);
         }
 
+        //PUT: api/Products/{id}
         [HttpPut("{id:int}")]
         public IActionResult UpdateProductById([FromRoute] int id, [FromBody] Product updatedProduct)
         {
@@ -65,6 +69,7 @@ namespace WebApiApplication.Controllers
             return Ok(updatedProduct);
         }
 
+        //DELETE: api/Products/{id}
         [HttpDelete("{id:int}")]
         public IActionResult DeleteById([FromRoute] int id)
         {

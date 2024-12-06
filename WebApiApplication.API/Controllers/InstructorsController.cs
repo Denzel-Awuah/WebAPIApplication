@@ -15,6 +15,7 @@ namespace WebApiApplication.Controllers
     [Route("api/[controller]")]
     public class InstructorsController : ControllerBase
     {
+        //Services
         private readonly IInstructorService _instructorService;
 
         public InstructorsController(IInstructorService instructorService)
@@ -32,7 +33,7 @@ namespace WebApiApplication.Controllers
 
         // GET: api/Instructors/5
         [HttpGet("{id}")]
-        public IActionResult GetInstructor(int id)
+        public IActionResult GetInstructor([FromRoute] int id)
         {
             var instructor = _instructorService.GetInstructorById(id);
 
@@ -101,7 +102,7 @@ namespace WebApiApplication.Controllers
             return NoContent();
         }
 
-
+        //Helper Function
         private bool InstructorExists(int id)
         {
             var instructor = _instructorService.GetInstructorById(id);

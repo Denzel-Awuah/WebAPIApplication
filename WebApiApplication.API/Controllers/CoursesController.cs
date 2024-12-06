@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ namespace WebApiApplication.Controllers
     [Route("api/[controller]")]
     public class CoursesController : ControllerBase
     {
+        //Services 
         private readonly ICourseService _courseService;
 
         public CoursesController(ICourseService courseService)
@@ -97,6 +99,7 @@ namespace WebApiApplication.Controllers
             return Ok(course);
         }
 
+        //Helper Functions
         private bool CourseExists([FromRoute] int id)
         {
             var course = _courseService.GetCourseById(id);
