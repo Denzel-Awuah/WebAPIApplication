@@ -15,7 +15,6 @@ namespace WebApiApplication.Unit_Testing
         public void GetAllCourses_ShouldReturnOkResult()
         {
             //Arrange
-
             var returnArray = new List<Course>();
             
             var _courseService = new Mock<ICourseService>();
@@ -40,6 +39,7 @@ namespace WebApiApplication.Unit_Testing
             Title = "Test",
             Description = "This is a test course"
         };
+        
 
         
     }
