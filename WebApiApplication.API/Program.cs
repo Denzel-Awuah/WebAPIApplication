@@ -17,7 +17,7 @@ builder.Services.AddControllers()
             options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         });
 
-// Database Connections
+// Database Connections 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
