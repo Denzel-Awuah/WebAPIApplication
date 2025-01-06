@@ -100,7 +100,7 @@ namespace WebApiApplication.Controllers
         }
 
         //Helper Functions
-        private bool CourseExists([FromRoute] int id)
+        private bool CheckIfCourseExists([FromRoute] int id)
         {
             var course = _courseService.GetCourseById(id);
             if(course == null)
