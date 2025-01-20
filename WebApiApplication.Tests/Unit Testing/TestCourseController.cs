@@ -47,7 +47,6 @@ namespace WebApiApplication.Unit_Testing
 
             var result = sut.GetCourseById(1);
 
-
             var resultType = Assert.IsType<OkObjectResult>(result);
             Assert.Equal(resultType.Value, testCourse);
 
