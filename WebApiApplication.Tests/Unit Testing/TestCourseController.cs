@@ -37,7 +37,7 @@ namespace WebApiApplication.Unit_Testing
             var testCourse = new Course
             {
                 Id = 1,
-                Title = "Test",
+                Title = "Test Course Title",
                 Description = "This is a test course"
             };
 
