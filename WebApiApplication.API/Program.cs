@@ -42,7 +42,7 @@ builder.Services.AddSwaggerGen(options =>
     options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme()
     {
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Description = "Please enter a token",
+        Description = "Please enter a JWT token",
         Name = "Authorization",
         Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
         BearerFormat = "JWT",
