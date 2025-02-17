@@ -25,6 +25,7 @@ namespace WebApiApplication.Service
             _dbContext.SaveChanges();
             return newEmployee;
         }
+
         public List<Employee> AddNewEmployeeCollection(List<Employee> employeeCollection)
         {
             _dbContext.Employees.AddRange(employeeCollection);
